@@ -1,27 +1,32 @@
 ---
-layout: empty
-permalink:
+layout: default
+permalink: /contact/
 ---
 
-    <form action="/thanks/" method="post" id="contact-form">
+<div class="editable">
+
+
+</div>
+
+<form action="/thanks/" method="post" id="contact-form">
 
       <fieldset>
-
-            <input type="hidden" name="_to" value="">
+            <legend>Send email</legend>
+            <input type="text" name="_gotcha" style="display: none;">
+            <input type="hidden" name="_to" value="{{ site.email }}">
             <input type="hidden" name="_cc" value="a.ward@eyedivision.com">
             <input type="hidden" name="_subject" value="Web form">
             <p>
-            <label for="name">Name:</label>
-            <input type="text" name="name">
-            </p>
-            <p>
-            <label for="_replyto">Email:</label>
-            <input type="text" name="_replyto">
-            </p>
-            <p>
-            <label>Message</label>
-            <textarea name="message"></textarea>
-            </p>
+      <label for="name">Name:</label>
+      <input type="text" name="name" id="name">
+      </p>
+      <p>
+      <label for="_replyto">Email:</label>
+      <input type="email" name="_replyto" id="_replyto">
+      </p>
+      <p><label for="message">Message</label>
+      <textarea name="message" id="message"></textarea>
+      </p>
             {% if site.recaptcha_site_key %}
             <div class="g-recaptcha" data-sitekey="{{ site.recaptcha_site_key }}"></div>
             {% endif %}
@@ -30,4 +35,4 @@ permalink:
             </p>
       </fieldset>
 
-      </form>
+</form>
